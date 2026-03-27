@@ -42,7 +42,7 @@ function Plane({ position, color, shaderMouse }) {
   const velocity = useRef(0);
   const smoothVelocity = useRef(0);
 
-  const clock = useRef(new THREE.Clock());
+  const clock = useRef(new THREE.Timer());
 
   // 🎯 Mouse tracking (only once)
   useEffect(() => {
@@ -93,7 +93,7 @@ function Plane({ position, color, shaderMouse }) {
         0, // click (optional)
       );
 
-      uniforms.uTime.value = clock.current.getElapsedTime();
+      uniforms.uTime.value = clock.current.getElapsed();
     };
 
     animate();

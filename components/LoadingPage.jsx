@@ -8,7 +8,7 @@ const LoadingPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLoader(false);
-    }, 5000);
+    }, 4500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -29,7 +29,7 @@ const LoadingPage = () => {
             autoPlay
             muted
             loop
-            className="w-[300px] sm:w-[27vw]"
+            className="w-[300px] sm:w-[25vw]"
             src="/0001-0110.mkv"
           ></video>
         </motion.div>

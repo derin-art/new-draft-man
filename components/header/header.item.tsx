@@ -11,9 +11,9 @@ const HeaderItem = () => {
       className="absolute top-0 left-0 w-full text-white fontt-in"
     >
       <div className="flex flex-col justify-between w-full px-6 mt-6 sm:flex-row">
-        <h1 className="tracking-tight uppercase">
+        <div className="tracking-tight uppercase">
           <Title />
-        </h1>
+        </div>
 
         <div className="flex sm:flex-row flex-col  text-[clamp(10px,0.6vw,25px)] gap-x-14 tracking-[0.5] sm:mt-0 mt-6">
           <h1 className="max-w-[420px] w-[60vw] sm:w-[27vw] 2xl:max-w-[800px] leading-[2]">

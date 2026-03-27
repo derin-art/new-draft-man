@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Title = () => {
   // Adjust this value for your "preset period"
-  const START_DELAY = 6;
+  const START_DELAY = 5.2;
 
   return (
     <h1 className="flex items-center overflow-hidden tracking-tight uppercase text-[clamp(16px,1.2vw,40px)]">
