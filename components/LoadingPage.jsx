@@ -19,11 +19,8 @@ const LoadingPage = () => {
         <motion.div
           exit={{ opacity: 0 }}
           duration={0.5}
-          className="fixed top-0 left-0 z-30 flex items-center justify-center w-screen h-screen bg-black"
+          className="fixed top-0 left-0 z-30 flex flex-col items-center justify-center w-screen h-screen bg-black"
         >
-          <div className="hidden text-white fontt-in text-9xl animate-pulse">
-            /
-          </div>
           <video
             controls={false}
             autoPlay

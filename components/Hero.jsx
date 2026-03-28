@@ -10,8 +10,6 @@ import { useVideoTexture } from "@react-three/drei";
 
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 
-const clock = new THREE.Timer();
-
 const videoTexture = () => {
   const texture = useVideoTexture(
     "https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/360/Big_Buck_Bunny_360_10s_1MB.mp4",

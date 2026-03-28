@@ -1,4 +1,5 @@
 import Title from "../Title";
+import EmailLink from "./emai.link";
 
 const HeaderItem = () => {
   return (
@@ -10,7 +11,7 @@ const HeaderItem = () => {
       }}
       className="absolute top-0 left-0 w-full text-white fontt-in"
     >
-      <div className="flex flex-col justify-between w-full px-6 mt-6 sm:flex-row">
+      <div className="flex flex-col justify-between w-full px-6 2xl:px-[2vw] mt-6 2xl:mt-12  sm:flex-row">
         <div className="tracking-tight uppercase">
           <Title />
         </div>
@@ -36,12 +37,8 @@ const HeaderItem = () => {
               >
                 hello@anewdraft.com
               </a>
-              <a
-                className="hover:underline hidden sm:block"
-                href="mailto:hello@anewdraft.com "
-              >
-                hello@anewdraft.com
-              </a>
+
+              <EmailLink></EmailLink>
             </div>
           </div>
         </div>
