@@ -29,7 +29,15 @@ body {
   font-family: ingram;
   src: url("/ingram-mono-regular.ttf");
 }
+@font-face {
+  font-family: public-sans;
+  src: url("/PublicSans-VariableFont_wght.ttf");
+}
 
 .fontt-in {
   font-family: ingram;
+}
+
+.fontt-public {
+  font-family: public-sans;
 }

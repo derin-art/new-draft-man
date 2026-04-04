@@ -1,7 +1,9 @@
-const fragmentGlsl = `uniform vec4 uMouse; // xy = uv, z = movement, w = click
+const fragmentGlsl = `
+uniform vec4 uMouse; // xy = uv, z = movement, w = click
 uniform vec3 uColor;
 uniform sampler2D uTexture;
 uniform float uTime;
+uniform float uTint; // 👈 NEW
 
 varying vec2 vUv;
 
@@ -16,7 +18,6 @@ void main() {
   float click = uMouse.w;
 
   vec2 uv = vUv;
-  
 
   // distance from mouse
   float dist = distance(uv, mouseUV);
@@ -27,10 +28,8 @@ void main() {
   // noise for glitch
   float noise = random(vec2(uv.y * 2.0, uTime));
 
-  // ✅ proper glitch strength
+  // glitch strength
   float glitchStrength = influence * movement * 0.1;
-
-  // only apply when moving
   glitchStrength *= step(0.001, movement);
 
   // horizontal glitch shift
@@ -45,9 +44,13 @@ void main() {
 
   // spotlight tint
   float spotlight = smoothstep(0.3, 0.0, dist);
-  glitchColor += uColor  * 0.2;
+  glitchColor += uColor * 0.2;
+
+  // 👇 APPLY BLACK TINT
+  glitchColor = mix(glitchColor, vec3(0.0), uTint);
 
   gl_FragColor = vec4(glitchColor, 1.0);
-}`;
+}
+`;
 
 export default fragmentGlsl;

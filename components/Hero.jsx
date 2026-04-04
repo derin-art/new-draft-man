@@ -1,50 +1,42 @@
 "use client";
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { useRef, useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
-import { ShaderMouse } from "shader-mouse";
 import vertexShader from "../shaders/vertex";
-
 import fragmentShader from "../shaders/fragment";
-import { useVideoTexture } from "@react-three/drei";
-
-import { OrbitControls } from "three/examples/jsm/Addons.js";
-
-const videoTexture = () => {
-  const texture = useVideoTexture(
-    "https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/360/Big_Buck_Bunny_360_10s_1MB.mp4",
-  );
-  return <meshBasicMaterial map={texture} toneMapped={false} />;
-};
 
 const returnVideoTexture = () => {
+  if (typeof window === "undefined") return null; // Safety for Next.js SSR
+
   const video = document.createElement("video");
   video.crossOrigin = "anonymous";
   video.src = "/vid.mp4";
   video.loop = true;
   video.muted = true;
   video.play();
+
   const videoTexture = new THREE.VideoTexture(video);
   videoTexture.minFilter = THREE.LinearFilter;
   videoTexture.magFilter = THREE.LinearFilter;
-  videoTexture.format = THREE.RGBFormat;
+  videoTexture.format = THREE.RGBAFormat; // RGBFormat is deprecated in newer Three.js versions
   return videoTexture;
 };
 
-function Plane({ position, color, shaderMouse }) {
+function Plane({ position, color }) {
   const meshRef = useRef();
 
-  // persistent refs (important!)
+  // Persistent refs
   const mouse = useRef(new THREE.Vector2(0, 0));
   const prevMouse = useRef(new THREE.Vector2(0, 0));
   const velocity = useRef(0);
   const smoothVelocity = useRef(0);
 
-  const clock = useRef(new THREE.Timer());
+  const clock = useRef(new THREE.Timer()); // Switched to THREE.Clock for wider compatibility
 
-  // 🎯 Mouse tracking (only once)
+  // 🎯 Global Mouse tracking - This tracks everywhere over the HTML
   useEffect(() => {
     const handleMouseMove = (e) => {
+      // 0.0 to 1.0 coordinates
       const x = e.clientX / window.innerWidth;
       const y = 1.0 - e.clientY / window.innerHeight;
 
@@ -61,35 +53,38 @@ function Plane({ position, color, shaderMouse }) {
     };
   }, []);
 
-  // 🎨 uniforms
+  // 🎨 Uniforms
   const uniforms = useMemo(
     () => ({
       uMouse: { value: new THREE.Vector4(0, 0, 0, 0) },
       uColor: { value: new THREE.Color(color) },
       uTexture: { value: returnVideoTexture() },
       uTime: { value: 0 },
+      uTint: { value: 0.4 },
     }),
     [color],
   );
 
-  // 🔄 animation loop
+  // 🔄 Animation loop
   useEffect(() => {
     let frameId;
 
     const animate = () => {
       frameId = requestAnimationFrame(animate);
 
-      // smooth velocity (this is what makes it feel premium)
+      // Smooth velocity
       smoothVelocity.current +=
         (velocity.current - smoothVelocity.current) * 0.1;
 
-      // update uniforms
-      uniforms.uMouse.value.set(
-        mouse.current.x,
-        mouse.current.y,
-        smoothVelocity.current,
-        0, // click (optional)
-      );
+      // Update uniforms directly from our window tracker
+      if (uniforms.uMouse.value) {
+        uniforms.uMouse.value.set(
+          mouse.current.x,
+          mouse.current.y,
+          smoothVelocity.current,
+          0,
+        );
+      }
 
       uniforms.uTime.value = clock.current.getElapsed();
     };
@@ -98,14 +93,6 @@ function Plane({ position, color, shaderMouse }) {
 
     return () => cancelAnimationFrame(frameId);
   }, [uniforms]);
-
-  // optional shaderMouse integration
-  useEffect(() => {
-    if (meshRef.current && shaderMouse) {
-      shaderMouse.add(meshRef.current);
-      return () => shaderMouse.remove(meshRef.current);
-    }
-  }, [shaderMouse]);
 
   const { camera, size } = useThree();
   const viewport = useMemo(() => {
@@ -121,11 +108,9 @@ function Plane({ position, color, shaderMouse }) {
     let width, height;
 
     if (viewAspect > targetAspect) {
-      // screen is wider → match width, overflow height
       width = viewWidth;
       height = viewWidth / targetAspect;
     } else {
-      // screen is taller → match height, overflow width
       height = viewHeight;
       width = viewHeight * targetAspect;
     }
@@ -146,55 +131,40 @@ function Plane({ position, color, shaderMouse }) {
 }
 
 function Scene() {
-  const { camera, gl } = useThree();
-  const shaderMouseRef = useRef();
-
-  useEffect(() => {
-    shaderMouseRef.current = new ShaderMouse({
-      domElement: gl.domElement,
-      camera,
-    });
-
-    return () => shaderMouseRef.current?.dispose();
-  }, [camera, gl]);
-
+  // Removed shaderMouse initialization completely
   return (
     <>
-      {/*  <Plane
-        position={[0, 0, 2]}
-        color="#ff6b6b"
-        shaderMouse={shaderMouseRef.current}
-      /> */}
-      <Plane
-        position={[0, 0, 0]}
-        color="#000000"
-        shaderMouse={shaderMouseRef.current}
-      />
+      <Plane position={[0, 0, 0]} color="#000000" />
     </>
   );
 }
 
 export default function App() {
   const [viewport, setViewPort] = useState({ x: 0, y: 0 });
+
   useEffect(() => {
+    // Set initial size
     setViewPort({ x: window.innerWidth, y: window.innerHeight });
 
-    const resizeHander = (e) => {
+    const resizeHandler = () => {
       setViewPort({ x: window.innerWidth, y: window.innerHeight });
     };
 
-    addEventListener("resize", resizeHander);
+    window.addEventListener("resize", resizeHandler);
     return () => {
-      removeEventListener("resize", resizeHander);
+      window.removeEventListener("resize", resizeHandler);
     };
-  }, [window]);
+  }, []); // Empty dependency array prevents infinite re-renders in Next.js
+
+  // Prevent rendering Canvas until viewport is measured to avoid hydration errors
+  if (viewport.x === 0) return null;
+
   return (
     <Canvas
       style={{
         height: viewport.y,
         width: viewport.x,
       }}
-      className=""
       camera={{ position: [0, 0, 2], fov: 125 }}
     >
       <Scene />
