@@ -41,7 +41,7 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
             </div>
           </h1>
 
-          <div className="flex flex-col max-w-62.5  leading-loose 2xl:max-w-125 [&>*+*]:mt-[clamp(0px,10vh,100px)]   sm:w-[20vw]  md:w-[14vw]   2xl:[&>*+*]:mt-[clamp(0px,8vh,140px)]">
+          <div className="flex flex-col max-w-62.5  leading-loose 2xl:max-w-125 [&>*+*]:mt-[clamp(0px,10vh,100px)]   sm:w-[20vw] md:w-[16vw]  lg:w-[16vw] 2xl:[&>*+*]:mt-[clamp(0px,8vh,140px)]">
             <div className="h-[85px]">
               <h1>
                 With love from Lagos *{" "}
@@ -51,18 +51,21 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
                 GMT +1
                 <div>we work with clients worldwide.</div>
               </h1>
-              <div className="mt-5.5">
-                <span className="flex 2xl:gap-x-2 gap-x-1 items-center">
-                  Say{" "}
-                  <ArrowRight
-                    size={10}
-                    className="inline-block group-hover:ml-2 duration-300 2xl:hidden"
-                  />
-                  <ArrowRight className="2xl:inline-block  group-hover:ml-2 duration-300 hidden max-w-6 w-[0.7vw]" />{" "}
-                  <span className="inline-block">
+              <div className="mt-2 lg:mt-5.5">
+                <div className="flex 2xl:gap-x-2 gap-x-1 items-center">
+                  {" "}
+                  <span className="flex 2xl:gap-x-2 gap-x-1 items-center ">
+                    Say{" "}
+                    <ArrowRight
+                      size={10}
+                      className="inline-block group-hover:ml-2 duration-300 2xl:hidden"
+                    />
+                    <ArrowRight className="2xl:inline-block  group-hover:ml-2 duration-300 hidden max-w-6 w-[0.7vw]" />{" "}
+                  </span>{" "}
+                  <span className="inline-block ">
                     <EmailLink></EmailLink>
                   </span>
-                </span>
+                </div>
                 or book an{" "}
                 <a className="underline" href="/">
                   {" "}

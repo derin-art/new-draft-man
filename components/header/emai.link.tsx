@@ -20,7 +20,7 @@ export default function EmailLink() {
           setShowHover(false);
         }}
         href="mailto:hello@anewdraft.com"
-        className="relative hidden sm:block overflow-hidden h-[1.5em] hover:border-b w-fit"
+        className="relative hidden sm:block overflow-hidden h-[2em] hover:border-b w-fit"
       >
         <motion.span
           initial={{ y: "0%" }}
