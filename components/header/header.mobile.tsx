@@ -26,19 +26,19 @@ const HeaderMobile = ({ data }: { data: HomePageSingletonLinks }) => {
               {data.text2}
               <div>
                 <a className="flex mt-10 group items-center" href="/">
-                  Our Capabilites{" "}
                   <ArrowRight
                     size={10}
-                    className="inline-block ml-2 group-hover:ml-2 duration-300 2xl:hidden "
+                    className="inline-block mr-2 group-hover:mr-2 duration-300 2xl:hidden "
                   />
-                  <ArrowRight className="2xl:inline-block ml-2 group-hover:ml-2 duration-300 hidden max-w-6 w-[0.7vw]" />
+                  <ArrowRight className="2xl:inline-block mr-2 group-hover:mr-2 duration-300 hidden max-w-6 w-[0.7vw]" />
+                  Our Capabilites{" "}
                 </a>
               </div>
             </div>
           </h1>
 
-          <div className="flex   mt-[19vh]  sm:w-[20vw]  md:w-[14vw] justify-between  ">
-            <div className=" max-w-50 ">
+          <div className="flex   mt-[18vh]  sm:w-[20vw]  md:w-[14vw] justify-between  ">
+            <div className=" max-w-50 leading-loose">
               <h1>
                 With love from Lagos *{" "}
                 <span className="inline-block">
@@ -46,19 +46,19 @@ const HeaderMobile = ({ data }: { data: HomePageSingletonLinks }) => {
                 </span>{" "}
                 GMT +1 we work with clients worldwide.
               </h1>
-              <div className="mt-5.5">
+              <div className="mt-5.5 ">
                 <span className="flex 2xl:gap-x-2 gap-x-2 items-center">
                   Say{" "}
-                  <span className="inline-block">
-                    <EmailLink></EmailLink>
-                  </span>
                   <ArrowRight
                     size={10}
                     className="inline-block group-hover:ml-2 duration-300 2xl:hidden"
-                  />
-                  <ArrowRight className="2xl:inline-block  group-hover:ml-2 duration-300 hidden max-w-6 w-[0.7vw]" />{" "}
+                  />{" "}
+                  <EmailLink></EmailLink>
                 </span>
-                or book an
+                or book an {""}
+                <a href="/" className="underline">
+                  intro call with us
+                </a>
               </div>
             </div>
 

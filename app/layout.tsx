@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "A new draft",
+  title: "A NEW DRAFT, a creative studio",
   description:
     "A celebration of the craft of creativity, expression, and storytelling — a studio dedicated to helping businesses engage,communicate, and tell better stories visually.",
 };

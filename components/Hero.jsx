@@ -60,7 +60,7 @@ function Plane({ position, color }) {
       uColor: { value: new THREE.Color(color) },
       uTexture: { value: returnVideoTexture() },
       uTime: { value: 0 },
-      uTint: { value: 0.4 },
+      uTint: { value: 0.35 },
     }),
     [color],
   );
@@ -161,6 +161,7 @@ export default function App() {
 
   return (
     <>
+      <div className="w-screen h-screen top-0 left-0 fixed bg-linear-to-b from-transparent from-60% to-black z-20"></div>
       {typeof window != "undefined" && (
         <Canvas
           style={{

@@ -27,7 +27,7 @@ const Links = ({
     },
   ];
   return (
-    <div className="flex flex-col gap-y-1 sm:gap-y-default">
+    <div className="flex flex-col gap-y-1 sm:gap-y-default leading-normal">
       {links.map((item, index) => {
         return (
           <a key={index} href={item.link} className="hover:underline">

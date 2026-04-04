@@ -30,39 +30,44 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
                   className="flex w-fit group mt-10  items-center hover:underline"
                   href="/"
                 >
-                  Our Capabilites{" "}
                   <ArrowRight
                     size={10}
-                    className="inline-block ml-2 group-hover:ml-2 duration-300 2xl:hidden"
+                    className="inline-block mr-2 group-hover:mr-2 duration-300 2xl:hidden"
                   />
-                  <ArrowRight className="2xl:inline-block ml-2 group-hover:ml-4 duration-300 hidden max-w-6 w-[0.7vw]" />
+                  <ArrowRight className="2xl:inline-block mr-2 group-hover:mr-4 duration-300 hidden max-w-6 w-[0.7vw]" />
+                  Our Capabilites{" "}
                 </a>
               </div>
             </div>
           </h1>
 
-          <div className="flex flex-col max-w-62.5   2xl:max-w-125 [&>*+*]:mt-[clamp(0px,10vh,100px)]   sm:w-[20vw]  md:w-[14vw]   2xl:[&>*+*]:mt-[clamp(0px,8vh,140px)]">
+          <div className="flex flex-col max-w-62.5  leading-loose 2xl:max-w-125 [&>*+*]:mt-[clamp(0px,10vh,100px)]   sm:w-[20vw]  md:w-[14vw]   2xl:[&>*+*]:mt-[clamp(0px,8vh,140px)]">
             <div className="h-[85px]">
               <h1>
                 With love from Lagos *{" "}
                 <span className="inline-block">
                   <Time />
                 </span>{" "}
-                GMT +1 we work with clients worldwide.
+                GMT +1
+                <div>we work with clients worldwide.</div>
               </h1>
               <div className="mt-5.5">
                 <span className="flex 2xl:gap-x-2 gap-x-1 items-center">
                   Say{" "}
-                  <span className="inline-block">
-                    <EmailLink></EmailLink>
-                  </span>
                   <ArrowRight
                     size={10}
                     className="inline-block group-hover:ml-2 duration-300 2xl:hidden"
                   />
                   <ArrowRight className="2xl:inline-block  group-hover:ml-2 duration-300 hidden max-w-6 w-[0.7vw]" />{" "}
+                  <span className="inline-block">
+                    <EmailLink></EmailLink>
+                  </span>
                 </span>
-                or book an
+                or book an{" "}
+                <a className="underline" href="/">
+                  {" "}
+                  intro call with us
+                </a>
               </div>
             </div>
 

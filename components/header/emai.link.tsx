@@ -8,7 +8,7 @@ export default function EmailLink() {
     <>
       <a
         href="mailto:hello@anewdraft.com"
-        className="relative sm:hidden block overflow-hidden h-[1.5em] hover:border-b w-fit"
+        className="relative sm:hidden block overflow-hidden  hover:border-b w-fit"
       >
         <motion.span>hello@anewdraft.com</motion.span>
       </a>
