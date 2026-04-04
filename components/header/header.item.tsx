@@ -7,7 +7,6 @@ import Time from "./time";
 import { HomePageSingletonLinks } from "./header.types";
 
 const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
-  console.log("Fetched data from Sanity:", data); // Debugging log to check fetched data
   return (
     <div
       style={{

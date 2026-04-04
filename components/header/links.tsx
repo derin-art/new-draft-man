@@ -8,7 +8,6 @@ const Links = ({
     behance: string;
   };
 }) => {
-  console.log(data);
   const links = [
     {
       name: "Instagram",
