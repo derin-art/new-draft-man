@@ -3,8 +3,9 @@ import EmailLink from "./emai.link";
 import { ArrowRight } from "lucide-react";
 import Links from "./links";
 import Time from "./time";
+import { HomePageSingletonLinks } from "./header.types";
 
-const HeaderMobile = () => {
+const HeaderMobile = ({ data }: { data: HomePageSingletonLinks }) => {
   return (
     <div
       style={{
@@ -20,14 +21,9 @@ const HeaderMobile = () => {
 
         <div className="flex flex-col  text-[clamp(10px,0.6vw,25px)] gap-x-14 tracking-[0.5] mt-[21vh]">
           <h1 className="md:max-w-105 sm:w-[40vw] md:w-[30vw] lg:w-[20vw] 2xl:max-w-200 leading-loose ">
+            <div className="">{data.text1}</div>
             <div className="">
-              A celebration of the craft of creativity, expression, and
-              storytelling — a studio dedicated to helping businesses engage,
-              communicate, and tell better stories visually.
-            </div>
-            <div className="">
-              Our creative practice is expansive with a focus on visual
-              Communication with motion design.
+              {data.text2}
               <div>
                 <a className="flex mt-10 group items-center" href="/">
                   Our Capabilites{" "}
@@ -74,7 +70,14 @@ const HeaderMobile = () => {
                   </a>{" "} */}
 
             <div className="">
-              <Links></Links>
+              <Links
+                data={{
+                  instagram: data.link3,
+                  linkedin: data.link4,
+                  x: data.link1,
+                  behance: data.link2,
+                }}
+              ></Links>
             </div>
           </div>
         </div>

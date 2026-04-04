@@ -1,22 +1,30 @@
-import React from "react";
-
-const Links = () => {
+const Links = ({
+  data,
+}: {
+  data: {
+    instagram: string;
+    linkedin: string;
+    x: string;
+    behance: string;
+  };
+}) => {
+  console.log(data);
   const links = [
     {
       name: "Instagram",
-      link: "",
+      link: data ? data.instagram : "/",
     },
     {
       name: "LinkedIn",
-      link: "",
+      link: data ? data.linkedin : "/",
     },
     {
       name: "X",
-      link: "",
+      link: data ? data.x : "/",
     },
     {
       name: "Behance",
-      link: "",
+      link: data ? data.behance : "/",
     },
   ];
   return (

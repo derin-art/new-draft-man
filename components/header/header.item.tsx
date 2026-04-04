@@ -4,7 +4,10 @@ import { ArrowRight } from "lucide-react";
 import Links from "./links";
 import Time from "./time";
 
-const HeaderItem = () => {
+import { HomePageSingletonLinks } from "./header.types";
+
+const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
+  console.log("Fetched data from Sanity:", data); // Debugging log to check fetched data
   return (
     <div
       style={{
@@ -20,22 +23,20 @@ const HeaderItem = () => {
 
         <div className="flex sm:flex-row flex-col  text-[clamp(10px,0.6vw,25px)] gap-x-14 tracking-[0.5] sm:mt-0 mt-6">
           <h1 className="md:max-w-105 sm:w-[40vw] md:w-[30vw] lg:w-[20vw] 2xl:max-w-200 leading-loose [&>*+*]:mt-[clamp(0px,10vh,100px)] 2xl:[&>*+*]:mt-[clamp(0px,8vh,140px)]">
-            <div className="h-[85px] ">
-              A celebration of the craft of creativity, expression, and
-              storytelling — a studio dedicated to helping businesses engage,
-              communicate, and tell better stories visually.
-            </div>
+            <div className="h-[85px] ">{data.text1}</div>
             <div className="">
-              Our creative practice is expansive with a focus on visual
-              Communication with motion design.
+              {data.text2}
               <div>
-                <a className="flex mt-10 group items-center" href="/">
+                <a
+                  className="flex w-fit group mt-10  items-center hover:underline"
+                  href="/"
+                >
                   Our Capabilites{" "}
                   <ArrowRight
                     size={10}
                     className="inline-block ml-2 group-hover:ml-2 duration-300 2xl:hidden"
                   />
-                  <ArrowRight className="2xl:inline-block ml-2 group-hover:ml-2 duration-300 hidden max-w-6 w-[0.7vw]" />
+                  <ArrowRight className="2xl:inline-block ml-2 group-hover:ml-4 duration-300 hidden max-w-6 w-[0.7vw]" />
                 </a>
               </div>
             </div>
@@ -74,7 +75,16 @@ const HeaderItem = () => {
                   </a>{" "} */}
 
             <div className="">
-              <Links></Links>
+              {data && (
+                <Links
+                  data={{
+                    instagram: data.link3,
+                    linkedin: data.link4,
+                    x: data.link1,
+                    behance: data.link2,
+                  }}
+                ></Links>
+              )}
             </div>
           </div>
         </div>

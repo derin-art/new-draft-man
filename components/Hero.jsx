@@ -160,14 +160,18 @@ export default function App() {
   if (viewport.x === 0) return null;
 
   return (
-    <Canvas
-      style={{
-        height: viewport.y,
-        width: viewport.x,
-      }}
-      camera={{ position: [0, 0, 2], fov: 125 }}
-    >
-      <Scene />
-    </Canvas>
+    <>
+      {typeof window != "undefined" && (
+        <Canvas
+          style={{
+            height: viewport.y,
+            width: viewport.x,
+          }}
+          camera={{ position: [0, 0, 2], fov: 125 }}
+        >
+          <Scene />
+        </Canvas>
+      )}
+    </>
   );
 }
