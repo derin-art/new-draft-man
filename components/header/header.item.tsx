@@ -13,9 +13,9 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
         zIndex: 1,
         fontFamily: "public-sans",
       }}
-      className="absolute top-[49.5%] left-0 w-full text-white text-sm lg:text-[20px] 2xl:text-[clamp(10px,0.6vw,20px)]"
+      className="absolute top-[49.5%] left-0 w-full text-white text-sm lg:text-[20px] 2xl:text-[clamp(10px,0.6vw,20px)] font-thin"
     >
-      <div className="flex flex-col justify-between w-full px-6 2xl:px-[2vw]  sm:flex-row">
+      <div className="flex flex-col justify-between w-full px-6 2xl:px-[2.5vw]  sm:flex-row">
         <div className="tracking-tight uppercase">
           <Title />
         </div>
@@ -67,7 +67,7 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
                   </span>
                 </div>
                 or book an{" "}
-                <a className="underline" href="/">
+                <a className="hover:underline" href="/">
                   {" "}
                   intro call with us
                 </a>

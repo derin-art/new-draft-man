@@ -12,7 +12,7 @@ const HeaderMobile = ({ data }: { data: HomePageSingletonLinks }) => {
         zIndex: 1,
         fontFamily: "public-sans",
       }}
-      className="absolute top-12.25 left-0 w-full text-white text-sm lg:text-[20px] 2xl:text-[clamp(10px,0.6vw,20px)]"
+      className="absolute top-12.25 left-0 w-full text-white text-sm lg:text-[20px] 2xl:text-[clamp(10px,0.6vw,20px)] font-thin"
     >
       <div className="flex flex-col justify-between w-full px-8 2xl:px-[2vw]  sm:flex-row">
         <div className="tracking-tight uppercase">
@@ -56,7 +56,7 @@ const HeaderMobile = ({ data }: { data: HomePageSingletonLinks }) => {
                   <EmailLink></EmailLink>
                 </span>
                 or book an {""}
-                <a href="/" className="underline">
+                <a href="/" className="hover:underline">
                   intro call with us
                 </a>
               </div>
