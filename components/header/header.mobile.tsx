@@ -56,7 +56,11 @@ const HeaderMobile = ({ data }: { data: HomePageSingletonLinks }) => {
                   <EmailLink></EmailLink>
                 </span>
                 or book an {""}
-                <a href="/" className="hover:underline">
+                <a
+                  target="_blank"
+                  className="hover:underline"
+                  href="https://cal.com/a-new-draft-team-isnc6i/intro-call"
+                >
                   intro call with us
                 </a>
               </div>

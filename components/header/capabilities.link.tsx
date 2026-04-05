@@ -1,16 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
+import { ArrowRight } from "lucide-react";
 
-export default function EmailLink() {
+export default function CapabilitiesLink() {
   const [showHover, setShowHover] = React.useState(false);
   return (
-    <>
+    <span className="flex 3xl:gap-x-2 2xl:gap-x-2 gap-x-2 items-center">
+      <ArrowRight size={10} className="inline-block  duration-300 2xl:hidden" />
+      <ArrowRight className="2xl:inline-block  duration-300 hidden max-w-6 w-[0.7vw]" />
       <a
         href="mailto:hello@anewdraft.com"
         className="relative sm:hidden block overflow-hidden  hover:border-b w-fit"
       >
-        <motion.span>hello@anewdraft.com</motion.span>
+        <motion.span>Our capabilities</motion.span>
       </a>
       <a
         onMouseOver={() => {
@@ -28,7 +31,7 @@ export default function EmailLink() {
           transition={{ duration: 0.35, ease: "easeInOut" }}
           className="block"
         >
-          hello@anewdraft.com
+          Our capabilities
         </motion.span>
 
         <motion.span
@@ -37,9 +40,9 @@ export default function EmailLink() {
           transition={{ duration: 0.35, ease: "easeInOut" }}
           className="absolute left-0 top-0 block"
         >
-          hello@anewdraft.com
+          Our capabilities
         </motion.span>
       </a>
-    </>
+    </span>
   );
 }

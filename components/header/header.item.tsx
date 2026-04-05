@@ -3,6 +3,7 @@ import EmailLink from "./emai.link";
 import { ArrowRight } from "lucide-react";
 import Links from "./links";
 import Time from "./time";
+import CapabilitiesLink from "./capabilities.link";
 
 import { HomePageSingletonLinks } from "./header.types";
 
@@ -13,30 +14,22 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
         zIndex: 1,
         fontFamily: "public-sans",
       }}
-      className="absolute top-[49.5%] left-0 w-full text-white text-sm lg:text-[20px] 2xl:text-[clamp(10px,0.6vw,20px)] font-thin"
+      className="absolute top-[49.5%] left-0 w-full text-white text-sm lg:text-[20px] 2xl:text-[clamp(10px,0.6vw,20px)] font-thin 2xl:px-[2.5vw] 3xl:px-[5vw]"
     >
-      <div className="flex flex-col justify-between w-full px-6 2xl:px-[2.5vw]  sm:flex-row">
+      <div className="flex flex-col justify-between w-full px-6   sm:flex-row">
         <div className="tracking-tight uppercase">
           <Title />
         </div>
 
-        <div className="flex sm:flex-row flex-col  text-[clamp(10px,0.6vw,25px)] gap-x-14 tracking-[0.5] sm:mt-0 mt-6">
+        <div className="flex sm:flex-row flex-col  text-[clamp(10px,0.6vw,25px)] gap-x-14 tracking-[0.5] sm:mt-0 mt-6 ">
           <h1 className="md:max-w-105 sm:w-[40vw] md:w-[30vw] lg:w-[20vw] 2xl:max-w-200 leading-loose [&>*+*]:mt-[clamp(0px,10vh,100px)] 2xl:[&>*+*]:mt-[clamp(0px,8vh,140px)]">
             <div className="h-[85px] ">{data.text1}</div>
             <div className="">
               {data.text2}
               <div>
-                <a
-                  className="flex w-fit group mt-10  items-center hover:underline"
-                  href="/"
-                >
-                  <ArrowRight
-                    size={10}
-                    className="inline-block mr-2 group-hover:mr-2 duration-300 2xl:hidden"
-                  />
-                  <ArrowRight className="2xl:inline-block mr-2 group-hover:mr-4 duration-300 hidden max-w-6 w-[0.7vw]" />
-                  Our Capabilites{" "}
-                </a>
+                <p className="flex w-fit  mt-10  items-center ">
+                  <CapabilitiesLink></CapabilitiesLink>
+                </p>
               </div>
             </div>
           </h1>
@@ -60,14 +53,18 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
                       size={10}
                       className="inline-block group-hover:ml-2 duration-300 2xl:hidden"
                     />
-                    <ArrowRight className="2xl:inline-block  group-hover:ml-2 duration-300 hidden max-w-6 w-[0.7vw]" />{" "}
+                    <ArrowRight className="2xl:inline-block   duration-300 hidden max-w-6 w-[0.7vw]" />{" "}
+                    <span className="inline-block 2xl:h-[1.9em]   3xl:h-[2em] h-[2em] ">
+                      <EmailLink></EmailLink>
+                    </span>
                   </span>{" "}
-                  <span className="inline-block ">
-                    <EmailLink></EmailLink>
-                  </span>
                 </div>
                 or book an{" "}
-                <a className="hover:underline" href="/">
+                <a
+                  target="_blank"
+                  className="hover:underline"
+                  href="https://cal.com/a-new-draft-team-isnc6i/intro-call"
+                >
                   {" "}
                   intro call with us
                 </a>

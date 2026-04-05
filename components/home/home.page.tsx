@@ -13,7 +13,7 @@ const Homepage = async () => {
   return (
     <div className="h-screen w-screen overflow-hidden">
       <LoadingPage />
-      <div className="sm:block hidden">
+      <div className="sm:block hidden ">
         <HeaderItem data={data}></HeaderItem>
       </div>
       <div className="sm:hidden block">
