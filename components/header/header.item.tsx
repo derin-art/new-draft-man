@@ -14,7 +14,7 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
         zIndex: 1,
         fontFamily: "public-sans",
       }}
-      className="absolute top-[49.5%] left-0 w-full text-white text-sm lg:text-[20px] 2xl:text-[clamp(10px,0.6vw,20px)] font-thin 2xl:px-[2.5vw] 3xl:px-[5vw]"
+      className="absolute top-[49.5%] left-0 w-full text-white text-sm lg:text-[20px] 2xl:text-[clamp(10px,0.6vw,20px)] font-light 2xl:px-[2.5vw] 3xl:px-[5vw]"
     >
       <div className="flex flex-col justify-between w-full px-6   sm:flex-row">
         <div className="tracking-tight uppercase">
