@@ -44,7 +44,8 @@ const HeaderMobile = ({ data }: { data: HomePageSingletonLinks }) => {
                 <span className="inline-block">
                   <Time />
                 </span>{" "}
-                GMT +1 we work with clients worldwide.
+                GMT +1
+                <div>we work with clients worldwide.</div>
               </h1>
               <div className="mt-5.5 ">
                 <span className="flex 2xl:gap-x-2 gap-x-2 items-center">
