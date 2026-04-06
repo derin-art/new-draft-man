@@ -25,7 +25,12 @@ const HeaderMobile = ({ data }: { data: HomePageSingletonLinks }) => {
             <div className="">
               {data.text2}
               <div>
-                <a className="flex mt-10 group items-center" href="/">
+                <a
+                  target="_blank"
+                  className="flex mt-10 group items-center"
+                  href="
+https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/edit?usp=sharing"
+                >
                   <ArrowRight
                     size={10}
                     className="inline-block mr-2 group-hover:mr-2 duration-300 2xl:hidden "

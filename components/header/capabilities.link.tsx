@@ -10,7 +10,9 @@ export default function CapabilitiesLink() {
       <ArrowRight size={10} className="inline-block  duration-300 2xl:hidden" />
       <ArrowRight className="2xl:inline-block  duration-300 hidden max-w-6 w-[0.7vw]" />
       <a
-        href="mailto:hello@anewdraft.com"
+        target="_blank"
+        href="
+https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/edit?usp=sharing"
         className="relative sm:hidden block overflow-hidden  hover:border-b w-fit"
       >
         <motion.span>Our capabilities</motion.span>
