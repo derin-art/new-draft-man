@@ -29,11 +29,12 @@ const HeroMobile = () => {
         playing
         muted
         loop
+        playsInline
         controls={false}
         width="100%"
         style={{ height: "100vh" }}
         height="100%"
-        className=" top-0 left-0 object-cover"
+        className=" top-0 left-0 object-cover "
       />
       {/*    <video
         ref={videoRef}
