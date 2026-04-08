@@ -6,6 +6,10 @@ const HeroMobile = () => {
   const videoRef: any = useRef(null);
 
   useEffect(() => {
+    window && window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (videoRef.current) {
       // iOS specifically looks for defaultMuted on the DOM element
       videoRef.current.defaultMuted = true;

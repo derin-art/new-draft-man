@@ -42,7 +42,7 @@ https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/
             </div>
           </h1>
 
-          <div className="flex   mt-[18vh]  sm:w-[20vw]  md:w-[14vw] justify-between  ">
+          <div className="flex   mt-[18vh]  sm:w-[20vw]  md:w-[14vw] gap-x-[60px] ">
             <div className=" max-w-50 leading-loose">
               <h1>
                 With love from Lagos *{" "}
