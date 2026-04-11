@@ -24,7 +24,7 @@ https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/
         onMouseLeave={() => {
           setShowHover(false);
         }}
-        href="mailto:hello@anewdraft.com"
+        href="https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/edit?usp=sharing"
         className="relative hidden sm:block overflow-hidden 2xl:h-[1.8em] h-[2em] hover:border-b w-fit"
       >
         <motion.span
