@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-export default function CapabilitiesLink() {
+export default function CapabilitiesLink({ link }: { link: string }) {
   const [showHover, setShowHover] = React.useState(false);
   return (
     <span className="flex 3xl:gap-x-2 2xl:gap-x-2 gap-x-2 items-center">
@@ -11,8 +11,7 @@ export default function CapabilitiesLink() {
       <ArrowRight className="2xl:inline-block  duration-300 hidden max-w-6 w-[0.7vw]" />
       <a
         target="_blank"
-        href="
-https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/edit?usp=sharing"
+        href={link}
         className="relative sm:hidden block overflow-hidden  hover:border-b w-fit"
       >
         <motion.span>Our capabilities</motion.span>
@@ -24,7 +23,7 @@ https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/
         onMouseLeave={() => {
           setShowHover(false);
         }}
-        href="https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/edit?usp=sharing"
+        href={link}
         className="relative hidden sm:block overflow-hidden 2xl:h-[1.8em] h-[2em] hover:border-b w-fit"
       >
         <motion.span

@@ -28,14 +28,14 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
               {data.text2}
               <div>
                 <p className="flex w-fit  mt-10  items-center ">
-                  <CapabilitiesLink></CapabilitiesLink>
+                  <CapabilitiesLink link={data.link5}></CapabilitiesLink>
                 </p>
               </div>
             </div>
           </h1>
 
           <div className="flex flex-col max-w-62.5  leading-loose 2xl:max-w-125 [&>*+*]:mt-[clamp(0px,10vh,100px)]   sm:w-[20vw] md:w-[16vw]  lg:w-[16vw] 2xl:[&>*+*]:mt-[clamp(0px,8vh,140px)]">
-            <div className="h-[85px]">
+            <div className="h-21.25">
               <h1>
                 With love from Lagos *{" "}
                 <span className="inline-block">
@@ -63,7 +63,7 @@ const HeaderItem = async ({ data }: { data: HomePageSingletonLinks }) => {
                 <a
                   target="_blank"
                   className="hover:underline"
-                  href="https://cal.com/a-new-draft-team-isnc6i/intro-call"
+                  href={data.link6}
                 >
                   {" "}
                   intro call with us

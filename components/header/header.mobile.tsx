@@ -28,8 +28,7 @@ const HeaderMobile = ({ data }: { data: HomePageSingletonLinks }) => {
                 <a
                   target="_blank"
                   className="flex mt-10 group items-center"
-                  href="
-https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/edit?usp=sharing"
+                  href={data.link5}
                 >
                   <ArrowRight
                     size={10}
@@ -65,7 +64,7 @@ https://docs.google.com/document/d/11n_1NiqAVULVt6EwYcEH-6BsBmWfDpgxcEq3KlRbQpk/
                 <a
                   target="_blank"
                   className="hover:underline"
-                  href="https://cal.com/a-new-draft-team-isnc6i/intro-call"
+                  href={data.link6}
                 >
                   intro call with us
                 </a>

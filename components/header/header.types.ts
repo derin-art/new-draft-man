@@ -12,4 +12,6 @@ export type HomePageSingletonLinks = {
   text2: string;
   text3: string;
   text4: string;
+  link5: string;
+  link6: string;
 };
